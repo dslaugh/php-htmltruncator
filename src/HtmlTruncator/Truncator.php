@@ -79,7 +79,7 @@ class Truncator {
 
 		list($text, $_, $opts) = static::_truncate_node($doc, $root_node, $length, $opts);
 		$text = substr(substr($text, 0, -6), 5);
-		return $text;
+		return utf8_decode($text);
 	}
 
 	protected static function _truncate_node($doc, $node, $length, $opts) {
